@@ -221,6 +221,15 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 .act-divider .huge { font-size: 300px; }
 .s4-grid { display: grid; grid-template-columns: 1fr 520px; align-items: center; height: 100%; }
 .s4-sub { font-family: var(--serif); font-size: 60px; margin-top: 36px; letter-spacing: -0.015em; }
+.s6-grid { display: grid; grid-template-columns: 1fr 840px; gap: 60px; align-items: center; height: 100%; }
+.poll { padding: 44px 52px; }
+.poll-k { font-size: 22px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--chce); }
+.poll-q { margin-top: 16px; font-family: var(--serif); font-size: 54px; line-height: 1.12; letter-spacing: -0.015em; }
+.poll-data { margin-top: 30px; padding-top: 26px; border-top: 2px solid var(--line); display: flex; flex-direction: column; gap: 20px; }
+.pd { display: grid; grid-template-columns: 150px 1fr; column-gap: 22px; align-items: baseline; font-size: 24px; line-height: 1.35; color: var(--ink-2); }
+.pd b { font-family: var(--serif); font-weight: 400; font-size: 56px; line-height: 1; color: var(--ink); }
+.pd .src { display: block; margin-top: 4px; font-size: 18px; color: var(--muted); }
+.poll-q2 { margin-top: 28px; font-family: var(--serif); font-size: 40px; line-height: 1.15; color: var(--chce); }
 
 /* S5 */
 .s5-note { position: absolute; right: 0; top: 70px; text-align: right; }
@@ -687,17 +696,21 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 <!-- 6 -->
 <section data-act="chce" class="act-divider">
   <div class="frame">
-    <div class="s4-grid">
+    <div class="s6-grid">
       <div>
         <p class="eyebrow">Akt I</p>
-        <h2 class="huge">CHCE?</h2>
+        <h2 class="huge" style="font-size: 240px;">CHCE?</h2>
         <p class="s4-sub">Czy ty w ogóle chcesz?</p>
       </div>
-      <svg viewBox="0 0 520 640" width="520" height="640" aria-hidden="true">
-        <circle cx="260" cy="190" r="130" fill="#daf0f3"/>
-        <path d="M40 640c0-150 98-250 220-250s220 100 220 250z" fill="#daf0f3"/>
-        <text x="260" y="248" class="serif" font-size="190" text-anchor="middle" fill="#00869c" fill-opacity="0.16">?</text>
-      </svg>
+      <div class="card poll">
+        <p class="poll-k">Ankieta · ręce w górę ✋</p>
+        <p class="poll-q">Kto z Was zmieniłby pracę, gdyby nowa firma zapłaciła <span class="c-chce">30% więcej</span>?</p>
+        <div class="poll-data fragment fade-up">
+          <p class="pd"><b>&gt;20%</b><span>tyle trzeba, żeby wyciągnąć zaangażowanego pracownika od dobrego szefa; niezaangażowanego — prawie nic<span class="src">Gallup, 2021</span></span></p>
+          <p class="pd"><b>31%</b><span>pracowników w Polsce przy zmianie pracy oczekuje aż ok. 30% więcej<span class="src">Sedlak &amp; Sedlak, grudzień 2025, ok. 1000 osób</span></span></p>
+        </div>
+        <p class="poll-q2 fragment fade-up">A kto ma dziś włączone „Open to Work”?</p>
+      </div>
     </div>
   </div>
 </section>
