@@ -1,4 +1,4 @@
-# Trzy pytania, jedna rekrutacja
+# When is it a match?
 
 Slajdy z wystąpienia **„AI and recruitment: When is it a match?”** — Bartek Kolasa (CTO, TechTree), WAIT AI Meetup, Biblioteka Uniwersytetu Ekonomicznego we Wrocławiu, 29 października 2026.
 
