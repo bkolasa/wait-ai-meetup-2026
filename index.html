@@ -484,6 +484,14 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 
 /* S22 */
 .s22-grid { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center; height: 100%; }
+.s27-side { display: flex; flex-direction: column; }
+.party { margin-top: 28px; background: var(--green); color: #fff; border-radius: 24px; box-shadow: var(--shadow); padding: 22px 28px 24px; }
+.party-k { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.82); }
+.party-k svg { width: 28px; height: 28px; flex: none; }
+.party-h { font-family: var(--serif); font-size: 40px; line-height: 1.1; margin-top: 10px !important; }
+.party-p { font-size: 22px; margin-top: 8px !important; color: rgba(255,255,255,0.9); }
+.party-k b, .party-p b { color: #fff; }
+.party-p b { font-weight: 600; }
 .media { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
 .media .clip, .media .clip-src { display: none; }
 .media .clip { max-width: 100%; max-height: 640px; border-radius: 28px; background: #000; box-shadow: var(--shadow); }
@@ -1433,7 +1441,14 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
         </div>
         <p class="thanks">Special thanks: <b>Claude Opus 5.5</b> — za pomoc w skompilowaniu tej prezentacji</p>
       </div>
-      <figure class="speaker"><img src="assets/bartek-kolasa.jpg" alt="Bartek Kolasa"><figcaption><span class="nm">Bartek Kolasa</span><span class="rl">CTO · TechTree</span></figcaption></figure>
+      <div class="s27-side">
+        <figure class="speaker"><img src="assets/bartek-kolasa.jpg" alt="Bartek Kolasa"><figcaption><span class="nm">Bartek Kolasa</span><span class="rl">CTO · TechTree</span></figcaption></figure>
+        <div class="party">
+          <p class="party-k"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h10v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M15 11h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M5 8a2.5 2.5 0 0 1 3-2.4 3 3 0 0 1 5.6.4A2 2 0 0 1 15 8"/><path d="M8.5 11.5v6M11.5 11.5v6"/></g></svg>Afterparty · <b>21:00</b></p>
+          <p class="party-h">Bar „U Augusta”</p>
+          <p class="party-p">ul. Bogusławskiego<br><b>Zapraszam wszystkich!</b></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
