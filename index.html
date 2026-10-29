@@ -322,6 +322,20 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 .pipeline .human .num { color: var(--green-bright); }
 .pipeline .human svg.person { width: 54px; height: 54px; }
 .s13-punch { text-align: left; }
+.pipeline.compact { margin: 32px 0 0; }
+.pipeline.compact .step-card { min-height: 196px; padding: 28px 30px; }
+.s15-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 60px; margin-top: 40px; }
+.law {
+  position: relative; width: 1060px; flex: none; box-sizing: border-box;
+  background: var(--card); border: 2px solid var(--ink); border-radius: 28px; box-shadow: var(--shadow); padding: 24px 34px 26px;
+}
+.law::before { content: ""; position: absolute; right: 124px; top: -42px; height: 40px; border-left: 3px dashed var(--ink); }
+.law-k { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--act); }
+.law-k svg { width: 30px; height: 30px; flex: none; }
+.law-h { font-family: var(--serif); font-size: 44px; line-height: 1.1; margin-top: 12px !important; }
+.law-h em { font-style: normal; color: var(--warn); }
+.law-p { font-size: 26px; color: var(--ink-2); margin-top: 10px !important; }
+.law-src { font-size: 19px; color: var(--muted); margin-top: 12px !important; }
 
 /* S14 / S15 / S19 shared diagram canvas */
 .canvas { position: relative; margin: auto; }
@@ -461,9 +475,6 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 
 /* S22 */
 .s22-grid { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center; height: 100%; }
-.s22-qs { display: flex; flex-direction: column; gap: 12px; margin-top: 40px; font-family: var(--serif); font-size: 50px; }
-.s22-qs .q { display: flex; align-items: center; gap: 26px; }
-.s22-qs .gate-glyph { width: 36px; height: 46px; }
 .media { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
 .media .clip, .media .clip-src { display: none; }
 .media .clip { max-width: 100%; max-height: 640px; border-radius: 28px; background: #000; box-shadow: var(--shadow); }
@@ -1027,7 +1038,7 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
     <h2 class="title">Dekompozycja zamiast <em>magicznego promptu.</em></h2>
     <p class="struck"><s>„Czy zatrudnić tego człowieka?” → jeden model</s></p>
     <div class="fill" style="display:flex; flex-direction:column;">
-      <div class="pipeline">
+      <div class="pipeline compact">
         <div class="step-card"><span class="num">01</span><p class="lbl">Dane</p></div>
         <div class="chev"><svg><use href="#chev"/></svg></div>
         <div class="step-card"><span class="num">02</span><p class="lbl">Konkretne kryteria</p></div>
@@ -1038,7 +1049,15 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
         <div class="chev"><svg><use href="#chev"/></svg></div>
         <div class="step-card human"><svg class="person" style="color: var(--green-bright)"><use href="#person"/></svg><p class="lbl">Decyzja rekrutera</p></div>
       </div>
-      <p class="statement fragment fade-up" style="margin-top: auto;">Mniej magii. <span class="c-green">Więcej inżynierii.</span></p>
+      <div class="s15-foot">
+        <p class="statement fragment fade-up" data-fragment-index="2">Mniej magii.<br><span class="c-green">Więcej inżynierii.</span></p>
+        <div class="law fragment fade-up" data-fragment-index="1">
+          <p class="law-k"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v16.5M8 20h8M4.5 7h15"/><path d="M4.5 7 2 13a2.5 2.5 0 0 0 5 0zM19.5 7 17 13a2.5 2.5 0 0 0 5 0z"/></g></svg>AI Act · załącznik III pkt 4</p>
+          <p class="law-h">Rekrutacja to AI <em>wysokiego ryzyka.</em></p>
+          <p class="law-p">Nadzór człowieka obowiązkowy — decyzję podejmuje rekruter, nie model.</p>
+          <p class="law-src">AI Act: art. 14 (nadzór człowieka) · RODO: art. 22 · obowiązki od 2 grudnia 2027</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1397,11 +1416,6 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
     <div class="s22-grid">
       <div>
         <h2 class="huge" style="font-size: 200px; color: var(--ink);">Pytania<span class="c-green">?</span></h2>
-        <div class="s22-qs">
-          <span class="q c-chce"><svg class="gate-glyph"><use href="#gate"/></svg>Czy chcesz tu pracować?</span>
-          <span class="q c-pasuje"><svg class="gate-glyph"><use href="#gate"/></svg>Czy pasujesz?</span>
-          <span class="q c-kontakt"><svg class="gate-glyph"><use href="#gate"/></svg>Czy możemy się skontaktować?</span>
-        </div>
         <div class="qr-row three">
           <div class="qr-mini"><svg viewBox="-2 -2 33 33" shape-rendering="crispEdges" role="img" aria-label="Kod QR do linkedin.com/in/bkolasa"><path stroke="#0e130e" d="M0 0.5h7m7 0h3m1 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h1m3 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h3m2 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m3 0h1m5 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m2 0h1m2 0h1m4 0h2m-21 1h1m5 0h1m1 0h2m1 0h2m2 0h1m1 0h3m1 0h2m2 0h3m-28 1h3m1 0h2m2 0h3m2 0h1m1 0h1m1 0h4m2 0h2m1 0h2m-23 1h2m1 0h3m2 0h5m4 0h1m-23 1h1m1 0h4m1 0h3m1 0h3m1 0h1m3 0h2m2 0h1m1 0h1m-26 1h1m1 0h1m2 0h2m4 0h1m1 0h1m1 0h1m4 0h1m1 0h2m4 0h1m-27 1h2m4 0h5m2 0h6m1 0h1m1 0h1m2 0h2m-29 1h1m4 0h4m6 0h2m1 0h1m1 0h4m1 0h2m-26 1h2m1 0h2m3 0h3m4 0h1m3 0h5m1 0h1m1 0h1m-28 1h7m4 0h1m2 0h1m1 0h1m1 0h1m3 0h1m1 0h2m-27 1h1m1 0h4m2 0h1m2 0h1m1 0h8m1 0h3m1 0h3m-29 1h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m2 0h2m4 0h1m2 0h1m-29 1h1m6 0h1m2 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h3m-25 1h1m1 0h2m2 0h3m1 0h1m3 0h1m2 0h2m1 0h5m1 0h3m-21 1h2m1 0h1m2 0h2m1 0h2m1 0h1m3 0h2m-26 1h7m2 0h1m1 0h1m3 0h3m1 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m2 0h2m3 0h3m2 0h2m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m3 0h5m1 0h1m2 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h5m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h6m1 0h7m-28 1h1m5 0h1m2 0h1m2 0h5m1 0h1m4 0h1m1 0h2m1 0h1m-29 1h7m1 0h2m1 0h4m2 0h1m1 0h1m2 0h5"/></svg><div><p class="k">LinkedIn</p><p class="t">Połączmy się</p><p class="u">linkedin.com/in/bkolasa</p></div></div>
           <div class="qr-mini"><svg viewBox="-2 -2 33 33" shape-rendering="crispEdges" role="img" aria-label="Kod QR do slajdów online"><path stroke="#0e130e" d="M0 0.5h7m2 0h3m1 0h2m3 0h1m1 0h1m1 0h7m-29 1h1m5 0h1m4 0h2m1 0h1m1 0h2m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h3m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h1m2 0h1m3 0h1m3 0h1m-21 1h2m3 0h3m1 0h2m1 0h3m2 0h1m2 0h1m3 0h2m-24 1h1m4 0h2m1 0h1m4 0h1m1 0h3m3 0h2m1 0h2m-26 1h2m2 0h4m1 0h2m1 0h4m3 0h1m2 0h1m-24 1h2m5 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h1m1 0h1m-25 1h2m1 0h1m1 0h5m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m4 0h1m-29 1h1m1 0h1m2 0h1m2 0h3m1 0h1m1 0h2m1 0h8m2 0h2m-29 1h2m2 0h3m1 0h2m2 0h1m2 0h3m3 0h1m1 0h1m1 0h2m-27 1h2m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m-26 1h1m1 0h3m4 0h2m3 0h1m2 0h1m4 0h2m-27 1h1m2 0h2m3 0h3m1 0h2m1 0h2m2 0h2m1 0h3m1 0h3m-29 1h2m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m3 0h1m1 0h2m2 0h1m2 0h1m-29 1h1m1 0h1m1 0h2m1 0h5m2 0h1m6 0h1m-22 1h1m4 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h6m1 0h3m-21 1h1m2 0h2m2 0h1m2 0h1m1 0h1m3 0h2m-26 1h7m1 0h3m1 0h2m1 0h2m1 0h3m1 0h1m1 0h3m-27 1h1m5 0h1m1 0h1m1 0h2m4 0h1m2 0h2m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h1m1 0h1m2 0h7m-26 1h1m1 0h3m1 0h1m3 0h3m1 0h2m1 0h4m4 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h1m2 0h1m2 0h2m1 0h7m-28 1h1m5 0h1m1 0h5m1 0h1m6 0h1m3 0h2m1 0h1m-29 1h7m1 0h3m2 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1"/></svg><div><p class="k">Slajdy online</p><p class="t">Śledź na telefonie</p><p class="u">bkolasa.github.io/<br>wait-ai-meetup-2026</p></div></div>
