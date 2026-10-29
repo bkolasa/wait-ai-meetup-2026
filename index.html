@@ -110,6 +110,14 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 .acts .step.is-current::after { background: var(--step); }
 .slide-no { font-size: 20px; font-weight: 600; letter-spacing: 0.08em; color: var(--muted); font-variant-numeric: tabular-nums; }
 .title-slide .chrome-event, .title-slide .chrome-bottom { display: none; }
+.chrome-bottom.has-follow { right: 184px; }
+.follow { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.follow-k { font-size: 15px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-deep); white-space: nowrap; }
+.follow-qr {
+  position: absolute; right: 16px; bottom: 16px; width: 144px; height: 144px; padding: 8px; box-sizing: border-box;
+  background: #fff; border-radius: 14px; box-shadow: var(--shadow);
+}
+.follow-qr svg { display: block; width: 100%; height: 100%; }
 
 /* Layout */
 .frame {
@@ -155,7 +163,7 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 /* S1 */
 .s1 { justify-content: center; }
 .s1 .eyebrow { margin-bottom: 40px; }
-.s1-grid { display: grid; grid-template-columns: 1fr 440px; gap: 40px; align-items: center; }
+.s1-grid { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: center; }
 .s1-questions { display: flex; flex-direction: column; gap: 12px; font-size: 84px; line-height: 1.06; }
 .s1-questions .q { display: flex; align-items: center; gap: 32px; }
 .s1-questions .gate-glyph { width: 52px; height: 68px; }
@@ -174,14 +182,15 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 .speaker .nm { display: block; font-family: var(--serif); font-size: 40px; line-height: 1.1; }
 .speaker .rl { display: block; margin-top: 4px; font-size: 18px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-deep); }
 .qr-mini { display: inline-flex; align-items: center; gap: 26px; background: #fff; border-radius: 24px; box-shadow: var(--shadow); padding: 18px 34px 18px 18px; }
-.qr-mini svg { width: 160px; height: 160px; flex: none; }
+.qr-mini svg { width: 220px; height: 220px; flex: none; }
 .qr-mini .k { font-size: 18px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-deep); }
 .qr-mini .t { font-family: var(--serif); font-size: 36px; line-height: 1.1; margin-top: 6px; }
 .qr-mini .u { font-size: 22px; color: var(--muted); margin-top: 6px; }
-.qr-row { display: flex; gap: 24px; margin-top: 48px; }
-.qr-row.three { gap: 20px; }
-.qr-row.three .qr-mini { gap: 18px; padding: 16px 24px 16px 16px; }
-.qr-row.three .qr-mini svg { width: 132px; height: 132px; }
+.qr-row { display: flex; gap: 24px; margin-top: 44px; }
+.qr-row.three { gap: 24px; }
+.qr-row.three .qr-mini { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px 20px 22px; }
+.qr-row.three .qr-mini > div { padding-left: 8px; }
+.qr-row.three .qr-mini svg { width: 280px; height: 280px; }
 .qr-row.three .qr-mini .k { font-size: 16px; }
 .qr-row.three .qr-mini .t { font-size: 30px; }
 .qr-row.three .qr-mini .u { font-size: 18px; }
@@ -514,6 +523,7 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <symbol id="qr-slides" viewBox="-2 -2 33 33" shape-rendering="crispEdges"><path stroke="#0e130e" d="M0 0.5h7m2 0h3m1 0h2m3 0h1m1 0h1m1 0h7m-29 1h1m5 0h1m4 0h2m1 0h1m1 0h2m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h3m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h1m2 0h1m3 0h1m3 0h1m-21 1h2m3 0h3m1 0h2m1 0h3m2 0h1m2 0h1m3 0h2m-24 1h1m4 0h2m1 0h1m4 0h1m1 0h3m3 0h2m1 0h2m-26 1h2m2 0h4m1 0h2m1 0h4m3 0h1m2 0h1m-24 1h2m5 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h1m1 0h1m-25 1h2m1 0h1m1 0h5m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m4 0h1m-29 1h1m1 0h1m2 0h1m2 0h3m1 0h1m1 0h2m1 0h8m2 0h2m-29 1h2m2 0h3m1 0h2m2 0h1m2 0h3m3 0h1m1 0h1m1 0h2m-27 1h2m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m-26 1h1m1 0h3m4 0h2m3 0h1m2 0h1m4 0h2m-27 1h1m2 0h2m3 0h3m1 0h2m1 0h2m2 0h2m1 0h3m1 0h3m-29 1h2m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m3 0h1m1 0h2m2 0h1m2 0h1m-29 1h1m1 0h1m1 0h2m1 0h5m2 0h1m6 0h1m-22 1h1m4 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h6m1 0h3m-21 1h1m2 0h2m2 0h1m2 0h1m1 0h1m3 0h2m-26 1h7m1 0h3m1 0h2m1 0h2m1 0h3m1 0h1m1 0h3m-27 1h1m5 0h1m1 0h1m1 0h2m4 0h1m2 0h2m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h1m1 0h1m2 0h7m-26 1h1m1 0h3m1 0h1m3 0h3m1 0h2m1 0h4m4 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h1m2 0h1m2 0h2m1 0h7m-28 1h1m5 0h1m1 0h5m1 0h1m6 0h1m3 0h2m1 0h1m-29 1h7m1 0h3m2 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1"/></symbol>
     <symbol id="lock" viewBox="0 0 24 24">
       <rect x="4" y="10.5" width="16" height="11" rx="2.5" fill="currentColor"/>
       <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2.4"/>
@@ -566,7 +576,7 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
       <span class="q c-kontakt"><svg class="gate-glyph"><use href="#gate"/></svg>Czy możemy się skontaktować?</span>
     </h1>
         <p class="s1-when">29 października 2026, 18:00<b>·</b>Biblioteka Uniwersytetu Ekonomicznego we Wrocławiu</p>
-        <div class="qr-row"><div class="qr-mini"><svg viewBox="-2 -2 33 33" shape-rendering="crispEdges" role="img" aria-label="Kod QR do linkedin.com/in/bkolasa"><path stroke="#0e130e" d="M0 0.5h7m7 0h3m1 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h1m3 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h3m2 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m3 0h1m5 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m2 0h1m2 0h1m4 0h2m-21 1h1m5 0h1m1 0h2m1 0h2m2 0h1m1 0h3m1 0h2m2 0h3m-28 1h3m1 0h2m2 0h3m2 0h1m1 0h1m1 0h4m2 0h2m1 0h2m-23 1h2m1 0h3m2 0h5m4 0h1m-23 1h1m1 0h4m1 0h3m1 0h3m1 0h1m3 0h2m2 0h1m1 0h1m-26 1h1m1 0h1m2 0h2m4 0h1m1 0h1m1 0h1m4 0h1m1 0h2m4 0h1m-27 1h2m4 0h5m2 0h6m1 0h1m1 0h1m2 0h2m-29 1h1m4 0h4m6 0h2m1 0h1m1 0h4m1 0h2m-26 1h2m1 0h2m3 0h3m4 0h1m3 0h5m1 0h1m1 0h1m-28 1h7m4 0h1m2 0h1m1 0h1m1 0h1m3 0h1m1 0h2m-27 1h1m1 0h4m2 0h1m2 0h1m1 0h8m1 0h3m1 0h3m-29 1h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m2 0h2m4 0h1m2 0h1m-29 1h1m6 0h1m2 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h3m-25 1h1m1 0h2m2 0h3m1 0h1m3 0h1m2 0h2m1 0h5m1 0h3m-21 1h2m1 0h1m2 0h2m1 0h2m1 0h1m3 0h2m-26 1h7m2 0h1m1 0h1m3 0h3m1 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m2 0h2m3 0h3m2 0h2m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m3 0h5m1 0h1m2 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h5m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h6m1 0h7m-28 1h1m5 0h1m2 0h1m2 0h5m1 0h1m4 0h1m1 0h2m1 0h1m-29 1h7m1 0h2m1 0h4m2 0h1m1 0h1m2 0h5"/></svg><div><p class="k">LinkedIn</p><p class="t">Połączmy się</p><p class="u">linkedin.com/in/bkolasa</p></div></div><div class="qr-mini"><svg viewBox="-2 -2 33 33" shape-rendering="crispEdges" role="img" aria-label="Kod QR do slajdów online"><path stroke="#0e130e" d="M0 0.5h7m2 0h3m1 0h2m3 0h1m1 0h1m1 0h7m-29 1h1m5 0h1m4 0h2m1 0h1m1 0h2m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h3m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h1m2 0h1m3 0h1m3 0h1m-21 1h2m3 0h3m1 0h2m1 0h3m2 0h1m2 0h1m3 0h2m-24 1h1m4 0h2m1 0h1m4 0h1m1 0h3m3 0h2m1 0h2m-26 1h2m2 0h4m1 0h2m1 0h4m3 0h1m2 0h1m-24 1h2m5 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h1m1 0h1m-25 1h2m1 0h1m1 0h5m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m4 0h1m-29 1h1m1 0h1m2 0h1m2 0h3m1 0h1m1 0h2m1 0h8m2 0h2m-29 1h2m2 0h3m1 0h2m2 0h1m2 0h3m3 0h1m1 0h1m1 0h2m-27 1h2m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m-26 1h1m1 0h3m4 0h2m3 0h1m2 0h1m4 0h2m-27 1h1m2 0h2m3 0h3m1 0h2m1 0h2m2 0h2m1 0h3m1 0h3m-29 1h2m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m3 0h1m1 0h2m2 0h1m2 0h1m-29 1h1m1 0h1m1 0h2m1 0h5m2 0h1m6 0h1m-22 1h1m4 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h6m1 0h3m-21 1h1m2 0h2m2 0h1m2 0h1m1 0h1m3 0h2m-26 1h7m1 0h3m1 0h2m1 0h2m1 0h3m1 0h1m1 0h3m-27 1h1m5 0h1m1 0h1m1 0h2m4 0h1m2 0h2m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h1m1 0h1m2 0h7m-26 1h1m1 0h3m1 0h1m3 0h3m1 0h2m1 0h4m4 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h1m2 0h1m2 0h2m1 0h7m-28 1h1m5 0h1m1 0h5m1 0h1m6 0h1m3 0h2m1 0h1m-29 1h7m1 0h3m2 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1"/></svg><div><p class="k">Slajdy online</p><p class="t">Śledź na telefonie</p><p class="u">bkolasa.github.io/<br>wait-ai-meetup-2026</p></div></div></div>
+        <div class="qr-row"><div class="qr-mini"><svg viewBox="-2 -2 33 33" shape-rendering="crispEdges" role="img" aria-label="Kod QR do linkedin.com/in/bkolasa"><path stroke="#0e130e" d="M0 0.5h7m7 0h3m1 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h1m3 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h3m2 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m3 0h1m5 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m2 0h1m2 0h1m4 0h2m-21 1h1m5 0h1m1 0h2m1 0h2m2 0h1m1 0h3m1 0h2m2 0h3m-28 1h3m1 0h2m2 0h3m2 0h1m1 0h1m1 0h4m2 0h2m1 0h2m-23 1h2m1 0h3m2 0h5m4 0h1m-23 1h1m1 0h4m1 0h3m1 0h3m1 0h1m3 0h2m2 0h1m1 0h1m-26 1h1m1 0h1m2 0h2m4 0h1m1 0h1m1 0h1m4 0h1m1 0h2m4 0h1m-27 1h2m4 0h5m2 0h6m1 0h1m1 0h1m2 0h2m-29 1h1m4 0h4m6 0h2m1 0h1m1 0h4m1 0h2m-26 1h2m1 0h2m3 0h3m4 0h1m3 0h5m1 0h1m1 0h1m-28 1h7m4 0h1m2 0h1m1 0h1m1 0h1m3 0h1m1 0h2m-27 1h1m1 0h4m2 0h1m2 0h1m1 0h8m1 0h3m1 0h3m-29 1h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m2 0h2m4 0h1m2 0h1m-29 1h1m6 0h1m2 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h3m-25 1h1m1 0h2m2 0h3m1 0h1m3 0h1m2 0h2m1 0h5m1 0h3m-21 1h2m1 0h1m2 0h2m1 0h2m1 0h1m3 0h2m-26 1h7m2 0h1m1 0h1m3 0h3m1 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m2 0h2m3 0h3m2 0h2m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m3 0h5m1 0h1m2 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h5m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h6m1 0h7m-28 1h1m5 0h1m2 0h1m2 0h5m1 0h1m4 0h1m1 0h2m1 0h1m-29 1h7m1 0h2m1 0h4m2 0h1m1 0h1m2 0h5"/></svg><div><p class="k">LinkedIn</p><p class="t">Połączmy się</p><p class="u">linkedin.com/in/bkolasa</p></div></div><div class="qr-mini"><svg viewBox="0 0 33 33" role="img" aria-label="Kod QR do slajdów online"><use href="#qr-slides"/></svg><div><p class="k">Slajdy online</p><p class="t">Śledź na telefonie</p><p class="u">bkolasa.github.io/<br>wait-ai-meetup-2026</p></div></div></div>
       </div>
       <figure class="speaker"><img src="assets/bartek-kolasa.jpg" alt="Bartek Kolasa"><figcaption><span class="nm">Bartek Kolasa</span><span class="rl">CTO · TechTree</span></figcaption></figure>
     </div>
@@ -1135,12 +1145,12 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
         <svg viewBox="0 0 260 40" style="height: 40px; margin-bottom: 140px;" aria-hidden="true">
           <line x1="16" y1="20" x2="236" y2="20" stroke="#9aa09b" stroke-width="4" stroke-dasharray="4 12" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
         </svg>
-        <div class="big-gate" style="--c: var(--ink); --t: var(--kontakt-tint)">
+        <div class="big-gate" style="--c: var(--ink); --t: var(--kontakt-tint); margin-right: 40px;">
           <div class="arch closed">
             <svg class="gate-lock" style="color: var(--ink)"><use href="#lock"/></svg>
             <span class="gate-sign">NIE KONTAKTUJ</span>
           </div>
-          <div class="ground"></div>
+          <div class="ground" style="width: 436px;"></div>
         </div>
       </div>
     </div>
@@ -1415,10 +1425,10 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
   <div class="frame">
     <div class="s22-grid">
       <div>
-        <h2 class="huge" style="font-size: 200px; color: var(--ink);">Pytania<span class="c-green">?</span></h2>
+        <h2 class="huge" style="font-size: 150px; color: var(--ink);">Pytania<span class="c-green">?</span></h2>
         <div class="qr-row three">
           <div class="qr-mini"><svg viewBox="-2 -2 33 33" shape-rendering="crispEdges" role="img" aria-label="Kod QR do linkedin.com/in/bkolasa"><path stroke="#0e130e" d="M0 0.5h7m7 0h3m1 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h1m3 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h3m2 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h2m3 0h1m5 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m2 0h1m2 0h1m4 0h2m-21 1h1m5 0h1m1 0h2m1 0h2m2 0h1m1 0h3m1 0h2m2 0h3m-28 1h3m1 0h2m2 0h3m2 0h1m1 0h1m1 0h4m2 0h2m1 0h2m-23 1h2m1 0h3m2 0h5m4 0h1m-23 1h1m1 0h4m1 0h3m1 0h3m1 0h1m3 0h2m2 0h1m1 0h1m-26 1h1m1 0h1m2 0h2m4 0h1m1 0h1m1 0h1m4 0h1m1 0h2m4 0h1m-27 1h2m4 0h5m2 0h6m1 0h1m1 0h1m2 0h2m-29 1h1m4 0h4m6 0h2m1 0h1m1 0h4m1 0h2m-26 1h2m1 0h2m3 0h3m4 0h1m3 0h5m1 0h1m1 0h1m-28 1h7m4 0h1m2 0h1m1 0h1m1 0h1m3 0h1m1 0h2m-27 1h1m1 0h4m2 0h1m2 0h1m1 0h8m1 0h3m1 0h3m-29 1h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m2 0h2m4 0h1m2 0h1m-29 1h1m6 0h1m2 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h3m-25 1h1m1 0h2m2 0h3m1 0h1m3 0h1m2 0h2m1 0h5m1 0h3m-21 1h2m1 0h1m2 0h2m1 0h2m1 0h1m3 0h2m-26 1h7m2 0h1m1 0h1m3 0h3m1 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m2 0h2m3 0h3m2 0h2m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m3 0h5m1 0h1m2 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h5m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h6m1 0h7m-28 1h1m5 0h1m2 0h1m2 0h5m1 0h1m4 0h1m1 0h2m1 0h1m-29 1h7m1 0h2m1 0h4m2 0h1m1 0h1m2 0h5"/></svg><div><p class="k">LinkedIn</p><p class="t">Połączmy się</p><p class="u">linkedin.com/in/bkolasa</p></div></div>
-          <div class="qr-mini"><svg viewBox="-2 -2 33 33" shape-rendering="crispEdges" role="img" aria-label="Kod QR do slajdów online"><path stroke="#0e130e" d="M0 0.5h7m2 0h3m1 0h2m3 0h1m1 0h1m1 0h7m-29 1h1m5 0h1m4 0h2m1 0h1m1 0h2m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h3m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h1m2 0h1m3 0h1m3 0h1m-21 1h2m3 0h3m1 0h2m1 0h3m2 0h1m2 0h1m3 0h2m-24 1h1m4 0h2m1 0h1m4 0h1m1 0h3m3 0h2m1 0h2m-26 1h2m2 0h4m1 0h2m1 0h4m3 0h1m2 0h1m-24 1h2m5 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h1m1 0h1m-25 1h2m1 0h1m1 0h5m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m4 0h1m-29 1h1m1 0h1m2 0h1m2 0h3m1 0h1m1 0h2m1 0h8m2 0h2m-29 1h2m2 0h3m1 0h2m2 0h1m2 0h3m3 0h1m1 0h1m1 0h2m-27 1h2m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m-26 1h1m1 0h3m4 0h2m3 0h1m2 0h1m4 0h2m-27 1h1m2 0h2m3 0h3m1 0h2m1 0h2m2 0h2m1 0h3m1 0h3m-29 1h2m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m3 0h1m1 0h2m2 0h1m2 0h1m-29 1h1m1 0h1m1 0h2m1 0h5m2 0h1m6 0h1m-22 1h1m4 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h6m1 0h3m-21 1h1m2 0h2m2 0h1m2 0h1m1 0h1m3 0h2m-26 1h7m1 0h3m1 0h2m1 0h2m1 0h3m1 0h1m1 0h3m-27 1h1m5 0h1m1 0h1m1 0h2m4 0h1m2 0h2m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h1m1 0h1m2 0h7m-26 1h1m1 0h3m1 0h1m3 0h3m1 0h2m1 0h4m4 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h1m2 0h1m2 0h2m1 0h7m-28 1h1m5 0h1m1 0h5m1 0h1m6 0h1m3 0h2m1 0h1m-29 1h7m1 0h3m2 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1"/></svg><div><p class="k">Slajdy online</p><p class="t">Śledź na telefonie</p><p class="u">bkolasa.github.io/<br>wait-ai-meetup-2026</p></div></div>
+          <div class="qr-mini"><svg viewBox="0 0 33 33" role="img" aria-label="Kod QR do slajdów online"><use href="#qr-slides"/></svg><div><p class="k">Slajdy online</p><p class="t">Śledź na telefonie</p><p class="u">bkolasa.github.io/<br>wait-ai-meetup-2026</p></div></div>
           <div class="qr-mini"><svg viewBox="-2 -2 29 29" shape-rendering="crispEdges" role="img" aria-label="Kod QR do techtree.dev"><path stroke="#0e130e" d="M0 0.5h7m1 0h3m1 0h1m1 0h2m2 0h7m-25 1h1m5 0h1m1 0h1m3 0h4m2 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h5m1 0h1m3 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h5m1 0h3m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m2 0h1m3 0h4m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-17 1h3m1 0h5m-16 1h2m1 0h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h1m1 0h5m-25 1h4m4 0h1m1 0h1m1 0h3m1 0h3m5 0h1m-24 1h1m1 0h6m1 0h2m1 0h1m3 0h2m1 0h1m1 0h3m-23 1h2m1 0h1m1 0h2m4 0h1m1 0h2m6 0h1m-23 1h2m2 0h2m1 0h1m2 0h1m2 0h1m1 0h4m1 0h1m1 0h2m-23 1h1m2 0h1m2 0h1m1 0h1m2 0h1m2 0h3m2 0h1m2 0h1m-25 1h1m1 0h2m2 0h2m1 0h2m1 0h2m2 0h1m1 0h2m2 0h3m-24 1h1m5 0h2m3 0h1m1 0h1m3 0h1m1 0h1m2 0h1m-24 1h1m3 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h6m-14 1h1m1 0h1m5 0h1m3 0h2m1 0h2m-25 1h7m1 0h3m1 0h1m2 0h2m1 0h1m1 0h2m1 0h2m-25 1h1m5 0h1m5 0h1m3 0h1m3 0h2m1 0h1m-24 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h2m1 0h6m1 0h2m-25 1h1m1 0h3m1 0h1m4 0h1m3 0h1m3 0h4m-23 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m3 0h1m3 0h1m-25 1h1m5 0h1m1 0h2m2 0h3m1 0h3m1 0h2m1 0h1m-24 1h7m3 0h2m3 0h2m1 0h2m3 0h2"/></svg><div><p class="k">TechTree</p><p class="t">Co budujemy</p><p class="u">techtree.dev</p></div></div>
         </div>
         <p class="thanks">Special thanks: <b>Claude Opus 5.5</b> — za pomoc w skompilowaniu tej prezentacji</p>
@@ -1457,6 +1467,7 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
   const slides = [...document.querySelectorAll(".reveal .slides > section")];
   slides.forEach((slide, i) => {
     const current = ACTS.findIndex((a) => a.id === slide.dataset.act);
+    const hasQr = !!slide.querySelector(".qr-row");
     const steps = ACTS.map((a, j) => {
       const state = j < current ? "is-past" : j === current ? "is-current" : "";
       return `<li class="step ${state}" data-step="${a.id}">${a.label}</li>`;
@@ -1468,9 +1479,16 @@ section[data-act="system"]  { --act: var(--green);      --act-tint: var(--mint-2
     );
     slide.insertAdjacentHTML(
       "beforeend",
-      `<footer class="chrome-bottom"><ol class="acts">${steps}</ol>` +
-        `<span class="slide-no">${String(i + 1).padStart(2, "0")} / ${slides.length}</span></footer>`,
+      `<footer class="chrome-bottom${hasQr ? "" : " has-follow"}"><ol class="acts">${steps}</ol>` +
+        `<div class="follow">${hasQr ? "" : '<span class="follow-k">Śledź slajdy →</span>'}` +
+        `<span class="slide-no">${String(i + 1).padStart(2, "0")} / ${slides.length}</span></div></footer>`,
     );
+    if (!hasQr) {
+      slide.insertAdjacentHTML(
+        "beforeend",
+        '<div class="follow-qr"><svg viewBox="0 0 33 33" role="img" aria-label="Kod QR do slajdów online"><use href="#qr-slides"/></svg></div>',
+      );
+    }
     const isDivider = slide.classList.contains("act-divider");
     slide.setAttribute("data-background-gradient", (isDivider && ACT_GLOW[slide.dataset.act]) || glow(MINT, MINT));
   });
